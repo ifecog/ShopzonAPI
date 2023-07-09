@@ -8,4 +8,5 @@ router.register('products', ProductViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('products/<int:pk>/', ProductViewSet.as_view({'get':  'get_product_details'}), name='product-details'),
+    # path('products/toprated/', ProductViewSet.as_view({'get':  'get_toprated_products'}), name='top-rated-products'),
 ]

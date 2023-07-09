@@ -53,6 +53,11 @@ class ProductViewSet(ModelViewSet):
             'pages': paginator.num_pages
         })
         
+    # def get_toprated_products(self, request):
+    #     products = Product.objects.filter(rating__gte=3).order_by('-rating')[0:5]
+    #     serializer = self.serializer_class(products, many=True)
+    #     return Response(serializer.data)
+        
     def get_object(self, *args, **kwargs):
         pk = self.kwargs.get('pk')
         product = get_object_or_404(Product, pk=pk)
